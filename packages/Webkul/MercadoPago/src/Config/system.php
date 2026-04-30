@@ -1,0 +1,83 @@
+<?php
+
+return [
+    [
+        'key'   => 'sales.paymentmethods.mercadopago',
+        'name'  => 'mercadopago::app.admin.system.title',
+        'info'  => 'mercadopago::app.admin.system.info',
+        'sort'  => 4,
+        'fields' => [
+            [
+                'name'          => 'active',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.status',
+                'type'          => 'select',
+                'options'       => [
+                    ['title' => 'Enabled',  'value' => 1],
+                    ['title' => 'Disabled', 'value' => 0],
+                ],
+                'channel_based' => true,
+                'locale_based'  => false,
+                'default'       => 0,
+            ],
+            [
+                'name'          => 'title',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.title',
+                'type'          => 'text',
+                'channel_based' => true,
+                'locale_based'  => true,
+                'default'       => 'Mercado Pago',
+                'validation'    => 'required',
+            ],
+            [
+                'name'          => 'description',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.description',
+                'type'          => 'textarea',
+                'channel_based' => true,
+                'locale_based'  => true,
+                'default'       => 'Paga con tarjeta, efectivo o transferencia vía Mercado Pago.',
+            ],
+            [
+                'name'          => 'access_token',
+                'title'         => 'Access Token (Producción)',
+                'type'          => 'text',
+                'channel_based' => true,
+                'locale_based'  => false,
+                'validation'    => 'required',
+                'info'          => 'Obtenido en: developers.mercadopago.com > Tus aplicaciones',
+            ],
+            [
+                'name'          => 'public_key',
+                'title'         => 'Public Key',
+                'type'          => 'text',
+                'channel_based' => true,
+                'locale_based'  => false,
+                'validation'    => 'required',
+            ],
+            [
+                'name'          => 'sandbox_access_token',
+                'title'         => 'Access Token (Sandbox)',
+                'type'          => 'text',
+                'channel_based' => true,
+                'locale_based'  => false,
+                'info'          => 'Para pruebas en entorno de desarrollo',
+            ],
+            [
+                'name'          => 'sandbox_mode',
+                'title'         => 'Usar Sandbox',
+                'type'          => 'boolean',
+                'channel_based' => true,
+                'locale_based'  => false,
+                'default'       => 1,
+            ],
+            [
+                'name'          => 'sort_order',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.sort-order',
+                'type'          => 'text',
+                'channel_based' => true,
+                'locale_based'  => false,
+                'default'       => 4,
+                'validation'    => 'numeric',
+            ],
+        ],
+    ],
+];
